@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munnaluri Rishikesh - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #1a1a2e, #16213e);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .skills {
+            margin: 20px 0;
+        }
+        .skills span {
+            display: inline-block;
+            background: #e94560;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+        }
+        .contact {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+        .contact a {
+            color: #00a8ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Munnaluri Rishikesh</h1>
+        <p><strong>USN:</strong> 1RVU23CSE291</p>
+        <p>I'm a coding enthusiast with a deep passion for technology and problem-solving. I love exploring new technologies, especially in the fields of AI and machine learning.</p>
+        
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>Python</span>
+            <span>Machine Learning</span>
+            <span>Artificial Intelligence</span>
+            <span>Web Development</span>
+            <span>Data Science</span>
+        </div>
+        
+        <h2>Contact Information</h2>
+        <p class="contact">Email: <a href="mailto:rishikeshjonin@gmail.com">rishikeshjonin@gmail.com</a></p>
+        <p class="contact">Phone: 9059076106</p>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.querySelector(".container");
+            const skills = document.querySelectorAll(".skills span");
+
+            // Fade-in effect for container
+            setTimeout(() => {
+                container.style.opacity = "1";
+                container.style.transform = "translateY(0)";
+            }, 300);
+
+            // Staggered animation for skills
+            skills.forEach((skill, index) => {
+                setTimeout(() => {
+                    skill.style.opacity = "1";
+                    skill.style.transform = "translateY(0)";
+                }, index * 200);
+            });
+
+            // Interactive hover effect for skills
+            skills.forEach(skill => {
+                skill.addEventListener("mouseover", () => {
+                    skill.style.transform = "scale(1.2)";
+                    skill.style.transition = "transform 0.3s ease";
+                });
+                skill.addEventListener("mouseout", () => {
+                    skill.style.transform = "scale(1)";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
